@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>Add Your To do List Here</h1>
+            <br>
+            <input type="text" id="to-do" size="45px" height="1000px" width="100" style="border-radius:6px;" text-align: center;>
+            <br>
+            <button onclick="js_func()">Add</button>
+            <br><br>
+            <h2>To Do List</h2>
+            <br>
+            <ol id="myList">
+            </ol>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var list = document.getElementById("myList");
+        function js_func() {
+            var value = document.getElementById("to-do").
+            value;
+            var li = document.createElement("LI");
+            var textNode = document.createTextNode
+            (value);
+            li.appendChild(textNode);
+            list.appendChild(li);
+        }
+        list.addEventListener("click", function(ev) {
+            if(ev.target.tagname === "LI") {
+                ev.target.classList.toggle("checked");
+            }
+        }, false);
+    </script>
+</body>
+</html>
